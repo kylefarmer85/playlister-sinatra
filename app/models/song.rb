@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
         self.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
     end
 
-    def find_by_slug(slug)
-        Song.find_by(id: slug.id)
-    end
+    def self.find_by_slug(slug)
+        self.where(name == slug).first
+     end
 end

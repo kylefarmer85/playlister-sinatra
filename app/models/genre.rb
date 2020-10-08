@@ -8,8 +8,8 @@ class Genre < ActiveRecord::Base
         self.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
     end
 
-    def find_by_slug(slug)
-        Genre.find_by(id: slug.id)
-    end
-
+    def self.find_by_slug(slug)
+        binding.pry
+        self.find_by( )
+     end
 end
